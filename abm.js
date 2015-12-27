@@ -18,35 +18,44 @@ var spatialOn = false;
 var runlogger = false;
 
 // /***AGENTS FOR ADDITION REACTION****/
-// var agents  = [
-//   {name:"C1_1",nbors:["C2_1","H1_1","H2_1"], mol:1, eneg: 2 ,x:0,y:0,z:0},
-//   {name:"C2_1",nbors:["C1_1","H3_1","H4_1"], mol: 1, eneg: 2,x:0,y:0,z:0},
-//   {name:"H1_1",nbors:["C1_1"], mol:1, eneg: 1,x:0,y:0,z:0},
-//   {name:"H2_1",nbors:["C1_1"] , mol:1, eneg: 1,x:0,y:0,z:0},
-//   {name:"H3_1",nbors:["C2_1"] , mol:1, eneg: 1,x:0,y:0,z:0},
-//   {name:"H4_1",nbors:["C2_1"], mol:1, eneg: 1,x:0,y:0,z:0},
-//   {name:"H1_2",nbors:["Br1_2"], mol:2, eneg: 1,x:0,y:0,z:0},
-//   {name:"Br1_2",nbors:["H1_2"], mol:2, eneg: 3,x:0,y:0,z:0}
-//         ];
-/***AGENTS FOR ELIMATION ****/
 var agents  = [
-  {name:"C1_1",nbors:["C2_1","H1_1","H2_1","H3_1"], mol:1, eneg: 2 ,x:0,y:0,z:0},
-  {name:"C2_1",nbors:["C1_1","H4_1","Br1_1","C3_1"], mol: 1, eneg: 2,x:0,y:0,z:0},
-  {name:"C3_1",nbors:["H5_1","C2_1","H6_1","H7_1"], mol:1, eneg: 1,x:0,y:0,z:0},
-  {name:"H1_1",nbors:["C1_1"] , mol:1, eneg: 1,x:0,y:0,z:0},
-  {name:"H2_1",nbors:["C2_1"] , mol:1, eneg: 1,x:0,y:0,z:0},
-  {name:"H3_1",nbors:["C2_1"], mol:1, eneg: 1,x:0,y:0,z:0},
+  {name:"C1_1",nbors:["C2_1","H1_1","H2_1"], mol:1, eneg: 2 ,x:0,y:0,z:0},
+  {name:"C2_1",nbors:["C1_1","H3_1","H4_1"], mol: 1, eneg: 2,x:0,y:0,z:0},
+  {name:"H1_1",nbors:["C1_1"], mol:1, eneg: 1,x:0,y:0,z:0},
+  {name:"H2_1",nbors:["C1_1"] , mol:1, eneg: 1,x:0,y:0,z:0},
+  {name:"H3_1",nbors:["C2_1"] , mol:1, eneg: 1,x:0,y:0,z:0},
   {name:"H4_1",nbors:["C2_1"], mol:1, eneg: 1,x:0,y:0,z:0},
-  {name:"Br1_1",nbors:["C2_1"], mol:1, eneg: 3,x:0,y:0,z:0},
-  {name:"H5_1",nbors:["C3_1"], mol:1, eneg: 1,x:0,y:0,z:0},
-  {name:"H6_1",nbors:["C3_1"], mol:1, eneg: 1,x:0,y:0,z:0},
-  {name:"H7_1",nbors:["C3_1"], mol:1, eneg: 1,x:0,y:0,z:0},
-  {name:"O1_2",nbors:["C1_2"], mol:2, eneg: 4,x:0,y:0,z:0},
-  {name:"C1_2",nbors:["O1_2","H1_2","H2_2","H3_2"], mol:2, eneg: 2,x:0,y:0,z:0},
-  {name:"H1_2",nbors:["C1_2"], mol:2, eneg: 1,x:0,y:0,z:0},
-  {name:"H2_2",nbors:["C1_2"], mol:2, eneg: 1,x:0,y:0,z:0},
-  {name:"H3_2",nbors:["C1_2"], mol:2, eneg: 1,x:0,y:0,z:0},
-];
+  {name:"H1_2",nbors:["Br1_2"], mol:2, eneg: 1,x:0,y:0,z:0},
+  {name:"Br1_2",nbors:["H1_2"], mol:2, eneg: 3,x:0,y:0,z:0},
+
+  {name:"C1_3",nbors:["C2_3","H1_3","H2_3"], mol:3, eneg: 2 ,x:0,y:0,z:0},
+  {name:"C2_3",nbors:["C1_3","H3_3","H4_3"], mol: 3, eneg: 2,x:0,y:0,z:0},
+  {name:"H1_3",nbors:["C1_3"], mol:3, eneg: 1,x:0,y:0,z:0},
+  {name:"H2_3",nbors:["C1_3"] , mol:3, eneg: 1,x:0,y:0,z:0},
+  {name:"H3_3",nbors:["C2_3"] , mol:3, eneg: 1,x:0,y:0,z:0},
+  {name:"H4_3",nbors:["C2_3"], mol:3, eneg: 1,x:0,y:0,z:0},
+  {name:"H1_4",nbors:["Br1_4"], mol:4, eneg: 1,x:0,y:0,z:0},
+  {name:"Br1_4",nbors:["H1_4"], mol:4, eneg: 3,x:0,y:0,z:0}
+        ];
+// /***AGENTS FOR ELIMATION ****/
+// var agents  = [
+//   {name:"C1_1",nbors:["C2_1","H1_1","H2_1","H3_1"], mol:1, eneg: 2 ,x:0,y:0,z:0},
+//   {name:"C2_1",nbors:["C1_1","H4_1","Br1_1","C3_1"], mol: 1, eneg: 2,x:0,y:0,z:0},
+//   {name:"C3_1",nbors:["H5_1","C2_1","H6_1","H7_1"], mol:1, eneg: 1,x:0,y:0,z:0},
+//   {name:"H1_1",nbors:["C1_1"] , mol:1, eneg: 1,x:0,y:0,z:0},
+//   {name:"H2_1",nbors:["C2_1"] , mol:1, eneg: 1,x:0,y:0,z:0},
+//   {name:"H3_1",nbors:["C2_1"], mol:1, eneg: 1,x:0,y:0,z:0},
+//   {name:"H4_1",nbors:["C2_1"], mol:1, eneg: 1,x:0,y:0,z:0},
+//   {name:"Br1_1",nbors:["C2_1"], mol:1, eneg: 3,x:0,y:0,z:0},
+//   {name:"H5_1",nbors:["C3_1"], mol:1, eneg: 1,x:0,y:0,z:0},
+//   {name:"H6_1",nbors:["C3_1"], mol:1, eneg: 1,x:0,y:0,z:0},
+//   {name:"H7_1",nbors:["C3_1"], mol:1, eneg: 1,x:0,y:0,z:0},
+//   {name:"O1_2",nbors:["C1_2"], mol:2, eneg: 4,x:0,y:0,z:0},
+//   {name:"C1_2",nbors:["O1_2","H1_2","H2_2","H3_2"], mol:2, eneg: 2,x:0,y:0,z:0},
+//   {name:"H1_2",nbors:["C1_2"], mol:2, eneg: 1,x:0,y:0,z:0},
+//   {name:"H2_2",nbors:["C1_2"], mol:2, eneg: 1,x:0,y:0,z:0},
+//   {name:"H3_2",nbors:["C1_2"], mol:2, eneg: 1,x:0,y:0,z:0},
+// ];
 
         for(var j = 0; j < agents.length; j++){
           if(numNbors(agents[j]) < bondLookUp(agents[j].name)){
@@ -67,6 +76,7 @@ for (var agentIter = 0; agentIter < agents.length; agentIter++){
   agents[agentIter].z = Math.random()*12;
 }
 
+var numMolsg = numMols(agents);
 
 
 //takes about 1000 iterations for a an addition reaction to complete
@@ -74,31 +84,26 @@ for(var i = 0; i < 10000; i++){
   if(i % 21 ===0 && runlogger){
   //  console.log(i);
   }
-  var xU1 = Math.random()*12;
-  var yU1 = Math.random()*12;
-  var zU1 = Math.random()*12;
-  var xU2 = Math.random()*12;
-  var yU2 = Math.random()*12;
-  var zU2 = Math.random()*12;
+  var randomMoves = [];
+  for(var k5 = 0; k5 < numMolsg; k5++){
+    randomMoves.push([Math.random()*12,Math.random()*12,Math.random()*12]);
+  }
+
   //move agents randomly
   for(var j = 0; j < agents.length; j++){
-    if(agents[j].mol === 1){
-      agents[j].x = (agents[j].x+ xU1) %12;
-      agents[j].y = (agents[j].y+yU1) %12;
-      agents[j].z = (agents[j].z+zU1) %12;
-    } else {
-      agents[j].x = (agents[j].x+xU2) %12;
-      agents[j].y = (agents[j].y+yU2) %12;
-      agents[j].z = (agents[j].z+zU2) %12;
+    for(var j2 = 0; j2 < numMolsg; j2++){
+      if(agents[j].mol === j2+1){
+        agents[j].x = (agents[j].x+ randomMoves[j2][0]) %12;
+        agents[j].y = (agents[j].y+randomMoves[j2][1]) %12;
+        agents[j].z = (agents[j].z+randomMoves[j2][2]) %12;
+      }
     }
   }
   //console.log(agents[0].x,agents[0].y,agents[0].z);
   //check for agent interaction
-  //console.log(agents);
-
   checkAgents();
 
-  intraMolecularReactions();
+//  intraMolecularReactions();
 
   //now we need to algin agents in space if any bonding has occured
   //turn of spatial for speed
@@ -177,6 +182,8 @@ function checkAgents(){
         agents[i].nbors.push(closeAgents[indexToGrab].name);
           closeAgents[indexToGrab].nbors=(agents[i].name);
         closeAgents[indexToGrab].mol = agents[i].mol;
+        console.log("Current reaction -->");
+        console.log(agents[i].name,closeAgents[indexToGrab].name);
 
       }
     }
@@ -278,18 +285,15 @@ function getNearbyAgents(i){
   var nba = [];
   var offest = 12.1 ;
   for(var j = 0; j < agents.length; j++){
-      if(agents[i].mol ===1 && agents[j].mol === 2){
-        if(Math.abs(agents[i].x-agents[j].x) < offest && Math.abs(agents[i].y-agents[j].y) <offest  && Math.abs(agents[i].z-agents[j].z) <offest){
-          //we have two agents from differnect molecules that are sufficeitnly close
-          nba.push(agents[j]);
-        }
-      } else if(agents[i].mol ===2 && agents[j].mol === 1){
+      if(agents[i].mol !== agents[j].mol){
+
         if(Math.abs(agents[i].x-agents[j].x) < offest && Math.abs(agents[i].y-agents[j].y) <offest  && Math.abs(agents[i].z-agents[j].z) <offest){
           //we have two agents from differnect molecules that are sufficeitnly close
           nba.push(agents[j]);
         }
       }
   }
+
 
   return nba;
 }
@@ -319,6 +323,9 @@ function eneg(name){
     }
   }
 }
+function numMols(){
+  return agents[agents.length-1].mol;
+}
 
 function agentsToText(){
   var mol1 = [];
@@ -326,6 +333,7 @@ function agentsToText(){
   var mol2 = [];
   var mol2txt = "";
   var mol3txt = "";
+  var mol4txt = "";
   for(var i = 0; i < agents.length; i++){
     if(agents[i].mol === 1 && agents[i].name.indexOf("H") === -1){
       mol1txt+=agents[i].name + " =  " +  agents[i].nbors.toString().replace(/,/g,"-") + "   ";
@@ -334,8 +342,10 @@ function agentsToText(){
       mol2txt+=agents[i].name + "  = " + agents[i].nbors.toString().replace(/,/g,"-") + "   ";
     } else if(agents[i].mol === 3 && agents[i].name.indexOf("H") === -1){
       mol3txt+=agents[i].name + "  =  " + agents[i].nbors.toString().replace(/,/g,"-") + "   ";
+    } else if(agents[i].mol === 4 && agents[i].name.indexOf("H") === -1){
+      mol4txt+=agents[i].name + "  =  " + agents[i].nbors.toString().replace(/,/g,"-") + "   ";
     }
   }
 
-  return [mol1txt,mol2txt,mol3txt];
+  return [mol1txt,mol2txt,mol3txt,mol4txt];
 }
