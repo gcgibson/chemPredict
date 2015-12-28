@@ -116,25 +116,29 @@ to intramol
             set maxNborIndex who
           ] 
          ]
-         output-print who
-         output-print maxNborIndex
+        
         
         
         ;; need to find lowest bond order of the max 
-        let lst [10 10 10 10]
-        output-print lst
-        let i 0
-        ask [link-neighbors] of turtle maxNborIndex [
-          replace-item i lst count link-neighbors
-          set i i + 1
-        ]
+        let minBondOrder 100
+        let indexMinBondOrder 20
         
-         
+        ask [link-neighbors] of turtle maxNborIndex [
+          if (count link-neighbors < minBondOrder)[
+             set indexMinBondOrder who
+             set minBondOrder count link-neighbors
+          ]
+
+        ]
+
+        output-print turtle indexMinBondOrder
+        
+        ;; find the element with highest electronegativity and smallest bond order  
         let maxEneg 0
         let maxEnegIndex 20
         ask [link-neighbors] of turtle maxNborIndex [
 
-            if([eneg] of turtle who > maxEneg)[
+            if([eneg] of turtle who > maxEneg and count [link-neighbors] of turtle who = minBondOrder)[
               set maxEnegIndex who
               set maxEneg [eneg] of turtle who  
             ]
@@ -143,10 +147,12 @@ to intramol
       
 
        if(maxEnegIndex < 20)[
-                output-print maxEnegIndex
-          ask [ one-of links] of turtle maxEnegIndex [die]   
+          output-print turtle maxEnegIndex
+
           ask turtle maxEnegIndex [set heading 3]          
-         
+          ask [link-neighbors] of turtle maxEnegIndex [
+            ask link who maxEnegIndex [die]
+          ]
          
        ] 
       
@@ -181,7 +187,9 @@ to react-Foward-oxygens
 
      output-print minEnegIndex
      output-print curTurt
-     ask [ one-of links] of turtle minEnegIndex [die]
+     ask [link-neighbors] of turtle minEnegIndex [
+       ask link who minEnegIndex [die]
+     ]
      ask turtle minEnegIndex [create-link-with turtle curTurt]
      ask turtle minEnegIndex [set heading curHeading]
      set reactionOccured 1
