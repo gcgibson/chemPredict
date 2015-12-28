@@ -11,12 +11,14 @@ turtles-own [eneg]
 to setup
   set global 0
   set reactionOccured 0
-  clear-all
+   clear-all
   set-default-shape hydrogens "molecule1"
   set-default-shape carbons "molecule1"
   set-default-shape oxygens "molecule1"
   set-default-shape bromines "molecule1"
-   create-carbons 2
+  
+;*********** ELIMINATION REACTION SETUP *************  
+  create-carbons 2
   ask turtle 0 [create-sb-with turtle 1]
   create-hydrogens 5
   ask turtle 2 [create-sb-with turtle 0]
@@ -45,15 +47,19 @@ to setup
        setxy -5 -5
      ]
   ] 
+
+;*********** ADDITION REACTION SETUP *************
+
 ;  create-carbons 2
-;  ask turtle 0 [create-link-with turtle 1]
+;  ask turtle 0 [create-sb-with turtle 1]
+;  ask turtle 0 [create-db-with turtle 1]
 ;  create-hydrogens 5
-;  ask turtle 2 [create-link-with turtle 0]
-;  ask turtle 3 [create-link-with turtle 0]
-;  ask turtle 4 [create-link-with turtle 1]
-;  ask turtle 5 [create-link-with turtle 1]
+;  ask turtle 2 [create-sb-with turtle 0]
+;  ask turtle 3 [create-sb-with turtle 0]
+;  ask turtle 4 [create-sb-with turtle 1]
+;  ask turtle 5 [create-sb-with turtle 1]
 ;  create-bromines  1
-;  ask turtle 7 [create-link-with turtle 6]
+;  ask turtle 7 [create-sb-with turtle 6]
 ;  ask turtles [
 ;    ifelse (who = 6 or who = 7)
 ;     [ set heading 2
@@ -62,8 +68,9 @@ to setup
 ;       set heading 1
 ;     ]
 ;  ] 
+
 ; create-carbons 2
-;  ask turtle 9 [create-link-with turtle 8]
+;  ask turtle 9 [create--with turtle 8]
 ;  create-hydrogens 5
 ;  ask turtle 10 [create-link-with turtle 8]
 ;  ask turtle 11 [create-link-with turtle 8]
@@ -79,7 +86,10 @@ to setup
 ;     [ set heading 4
 ;     ]
 ;     
-;  ] 
+;  ]
+  
+  
+   
   ask carbons [set eneg 2]
   ask hydrogens [set eneg 1]
   ask bromines [set eneg 4]
@@ -89,16 +99,22 @@ end
 
 to go1
   ask turtles [setxy 1 1]
-  ask turtles [if(breed = oxygens)[react-Foward-oxygens]]
-   
-  stop
+  ask turtles [
+     if(breed = oxygens)[react-Foward-oxygens]
+    ]
+    ask turtles [intramol]
+  ask turtles [
+     if(breed = carbons)[react-Foward-carbons]
+    ]
+    ask turtles [intramol]
+    set reactionOccured 0
 
   tick
 end
 
 
 to go2
-  ask turtles [intramol]
+
    
   stop
 
@@ -109,8 +125,11 @@ end
 to intramol
 
     if(breed = carbons)[
+
+      
       if( count [sb-neighbors] of turtle who < 4 and count [db-neighbors] of turtle who = 0)[
          ;find nbor with most nbors 
+
          let originalC who
          let maxNborIndex 20 
          let numMaxNbor 0
@@ -127,10 +146,10 @@ to intramol
         let minBondOrder 100
         let indexMinBondOrder 20
         
-        ask [link-neighbors] of turtle maxNborIndex [
-          if (count link-neighbors < minBondOrder)[
+        ask [sb-neighbors] of turtle maxNborIndex [
+          if (count sb-neighbors < minBondOrder)[
              set indexMinBondOrder who
-             set minBondOrder count link-neighbors
+             set minBondOrder count sb-neighbors
           ]
 
         ]
@@ -159,8 +178,8 @@ to intramol
           ] 
           
           ;after the LG leaves molecule condenses to form dbs
-          output-print turtle originalC
-          output-print turtle maxNborIndex
+
+
           ask turtle originalC [create-db-with turtle maxNborIndex] 
        ] 
        
@@ -169,13 +188,47 @@ to intramol
       ]
     ]
 end
-to react-Foward-carbon
-  if( count link-neighbors < 4)[
-   ; reaction ready to occur
-   ; output-print "CARBON"
-    
-  ] 
+to react-Foward-carbons
+  let curHeading heading
+  let curTurt who
   
+  if( count sb-neighbors < 4 )[
+    output-print "twice"
+    if (count other turtles-here > 4) [
+      
+
+     let minEneg 100
+     let minEnegIndex 20
+     ask other turtles-here [
+       if(heading != curHeading)[
+         if([eneg] of turtle who < minEneg)[
+            set minEnegIndex who
+            set minEneg [eneg] of turtle who  
+         ]
+       ]  
+     ]
+
+
+
+     if(minEnegIndex  < 20)[
+     ask [sb-neighbors] of turtle minEnegIndex [
+       ask sb who minEnegIndex [die]
+     ]
+     ask [db-neighbors] of turtle minEnegIndex [
+       ask db who minEnegIndex [die]
+     ]
+   
+     ask turtle minEnegIndex [create-sb-with turtle curTurt]
+     ask turtle minEnegIndex [set heading curHeading]
+     set reactionOccured 1
+     ]
+     
+    
+      
+    ]
+
+  
+  ]
 end
 to react-Foward-oxygens
   let curHeading heading
@@ -194,8 +247,8 @@ to react-Foward-oxygens
        ]  
      ]
 
-     output-print minEnegIndex
-     output-print curTurt
+
+
      ask [sb-neighbors] of turtle minEnegIndex [
        ask sb who minEnegIndex [die]
      ]
@@ -210,7 +263,7 @@ to react-Foward-oxygens
 
   
   ]
-  end
+end
 to react-Foward-hydrogens
     if( count link-neighbors < 1)[
    ; reaction ready to occur
@@ -262,7 +315,7 @@ Kb
 Kb
 0
 100
-97
+100
 1
 1
 NIL
@@ -306,8 +359,8 @@ BUTTON
 144
 55
 go1
-go1
-T
+go1\n
+NIL
 1
 T
 OBSERVER
