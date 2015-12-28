@@ -2,6 +2,9 @@ breed [carbons carbon]    ;; reactants are green, products are red
 breed [hydrogens hydrogen]
 breed [oxygens oxygen]
 breed [bromines bromine]
+undirected-link-breed [doubleBonds db]
+undirected-link-breed [singleBonds sb]
+
 
 globals [global reactionOccured]
 turtles-own [eneg]
@@ -14,22 +17,22 @@ to setup
   set-default-shape oxygens "molecule1"
   set-default-shape bromines "molecule1"
    create-carbons 2
-  ask turtle 0 [create-link-with turtle 1]
+  ask turtle 0 [create-sb-with turtle 1]
   create-hydrogens 5
-  ask turtle 2 [create-link-with turtle 0]
-  ask turtle 3 [create-link-with turtle 0]
-  ask turtle 6 [create-link-with turtle 0]
-  ask turtle 5 [create-link-with turtle 1]
-  ask turtle 4 [create-link-with turtle 1]
+  ask turtle 2 [create-sb-with turtle 0]
+  ask turtle 3 [create-sb-with turtle 0]
+  ask turtle 6 [create-sb-with turtle 0]
+  ask turtle 5 [create-sb-with turtle 1]
+  ask turtle 4 [create-sb-with turtle 1]
   create-bromines 1
-  ask turtle 7 [create-link-with turtle 1]
+  ask turtle 7 [create-sb-with turtle 1]
   create-oxygens  1
   create-carbons 1
-  ask turtle 8 [create-link-with turtle 9]
+  ask turtle 8 [create-sb-with turtle 9]
   create-hydrogens 3
-  ask turtle 9 [create-link-with turtle 10]
-  ask turtle 9 [create-link-with turtle 11]
-  ask turtle  9 [create-link-with turtle 12]
+  ask turtle 9 [create-sb-with turtle 10]
+  ask turtle 9 [create-sb-with turtle 11]
+  ask turtle  9 [create-sb-with turtle 12]
   
 
   ask turtles [
@@ -106,13 +109,14 @@ end
 to intramol
 
     if(breed = carbons)[
-      if( count [link-neighbors] of turtle who < 4)[
+      if( count [sb-neighbors] of turtle who < 4 and count [db-neighbors] of turtle who = 0)[
          ;find nbor with most nbors 
+         let originalC who
          let maxNborIndex 20 
          let numMaxNbor 0
-         ask [link-neighbors] of turtle who [
-          if(count [link-neighbors] of turtle who > numMaxNbor)[
-            set numMaxNbor count [link-neighbors] of turtle who
+         ask [sb-neighbors] of turtle who [
+          if(count [sb-neighbors] of turtle who > numMaxNbor)[
+            set numMaxNbor count [sb-neighbors] of turtle who
             set maxNborIndex who
           ] 
          ]
@@ -131,14 +135,14 @@ to intramol
 
         ]
 
-        output-print turtle indexMinBondOrder
+
         
         ;; find the element with highest electronegativity and smallest bond order  
         let maxEneg 0
         let maxEnegIndex 20
-        ask [link-neighbors] of turtle maxNborIndex [
+        ask [sb-neighbors] of turtle maxNborIndex [
 
-            if([eneg] of turtle who > maxEneg and count [link-neighbors] of turtle who = minBondOrder)[
+            if([eneg] of turtle who > maxEneg and count [sb-neighbors] of turtle who = minBondOrder)[
               set maxEnegIndex who
               set maxEneg [eneg] of turtle who  
             ]
@@ -147,14 +151,19 @@ to intramol
       
 
        if(maxEnegIndex < 20)[
-          output-print turtle maxEnegIndex
+
 
           ask turtle maxEnegIndex [set heading 3]          
-          ask [link-neighbors] of turtle maxEnegIndex [
-            ask link who maxEnegIndex [die]
-          ]
-         
+          ask [sb-neighbors] of turtle maxEnegIndex [
+            ask sb who maxEnegIndex [die]
+          ] 
+          
+          ;after the LG leaves molecule condenses to form dbs
+          output-print turtle originalC
+          output-print turtle maxNborIndex
+          ask turtle originalC [create-db-with turtle maxNborIndex] 
        ] 
+       
       
          
       ]
@@ -187,12 +196,13 @@ to react-Foward-oxygens
 
      output-print minEnegIndex
      output-print curTurt
-     ask [link-neighbors] of turtle minEnegIndex [
-       ask link who minEnegIndex [die]
+     ask [sb-neighbors] of turtle minEnegIndex [
+       ask sb who minEnegIndex [die]
      ]
-     ask turtle minEnegIndex [create-link-with turtle curTurt]
+     ask turtle minEnegIndex [create-sb-with turtle curTurt]
      ask turtle minEnegIndex [set heading curHeading]
      set reactionOccured 1
+     
      
     
       
