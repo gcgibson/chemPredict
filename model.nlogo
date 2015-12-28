@@ -77,62 +77,34 @@ to setup
 ;     ]
 ;     
 ;  ] 
-  ask carbons [set eneg 0]
+  ask carbons [set eneg 2]
   ask hydrogens [set eneg 1]
   ask bromines [set eneg 4]
 ;  ask turtles [output-print  heading]
   reset-ticks
 end
 
-to go
-  let rand1x random-float 10 - random-float 10
-  let rand1y random-float 10 - random-float 10
-  let rand2x random-float 10 - random-float 10
-  let rand2y random-float 10 - random-float 10
-  let rand3x random-float 10 - random-float 10
-  let rand3y random-float 10 - random-float 10
-  let rand4x random-float 10 - random-float 10
-  let rand4y random-float 10 - random-float 10
- 
-
-      ask turtles[
-        if(heading = 1)[
-          setxy rand1x + random-float .5 rand1y + random-float .5 
-        ] 
-        if(heading = 2)[
-          setxy rand2x + random-float .5 rand2y + random-float .5
-        ]
-        if(heading = 3)[
-          setxy rand3x + random-float .5 rand3y + random-float .5
-        ]
-        if(heading = 4)[
-          setxy rand3x + random-float .5 rand3y + random-float .5
-        ]
-        ifelse(reactionOccured = 0)[
-          if(breed = carbons) [react-Foward-carbon]
-          if(breed = oxygens) [react-Foward-oxygens]
-          if(breed = hydrogens) [react-Foward-hydrogens]
-          if(breed = bromines) [react-Foward-bromines]
-        ]
-        [
-         intramol 
-        ]
-
-        
-   ]
-      
-    
-   set reactionOccured  0
+to go1
+  ask turtles [setxy 1 1]
+  ask turtles [if(breed = oxygens)[react-Foward-oxygens]]
    
-  
- 
+  stop
 
+  tick
+end
+
+
+to go2
+  ask turtles [intramol]
+   
+  stop
 
   tick
 end
 
 
 to intramol
+
     if(breed = carbons)[
       if( count [link-neighbors] of turtle who < 4)[
          ;find nbor with most nbors 
@@ -146,7 +118,17 @@ to intramol
          ]
          output-print who
          output-print maxNborIndex
-         
+        
+        
+        ;; need to find lowest bond order of the max 
+        let lst [10 10 10 10]
+        output-print lst
+        let i 0
+        ask [link-neighbors] of turtle maxNborIndex [
+          replace-item i lst count link-neighbors
+          set i i + 1
+        ]
+        
          
         let maxEneg 0
         let maxEnegIndex 20
@@ -159,9 +141,15 @@ to intramol
             
         ]
       
-       output-print maxEnegIndex
-                       
+
+       if(maxEnegIndex < 20)[
+                output-print maxEnegIndex
+          ask [ one-of links] of turtle maxEnegIndex [die]   
+          ask turtle maxEnegIndex [set heading 3]          
          
+         
+       ] 
+      
          
       ]
     ]
@@ -176,6 +164,7 @@ to react-Foward-carbon
 end
 to react-Foward-oxygens
   let curHeading heading
+  let curTurt who
   if( count link-neighbors < 2)[
     if (count other turtles-here > 4) [
 
@@ -190,9 +179,10 @@ to react-Foward-oxygens
        ]  
      ]
 
-
+     output-print minEnegIndex
+     output-print curTurt
      ask [ one-of links] of turtle minEnegIndex [die]
-     
+     ask turtle minEnegIndex [create-link-with turtle curTurt]
      ask turtle minEnegIndex [set heading curHeading]
      set reactionOccured 1
      
@@ -254,7 +244,7 @@ Kb
 Kb
 0
 100
-100
+97
 1
 1
 NIL
@@ -297,8 +287,8 @@ BUTTON
 22
 144
 55
-go
-go
+go1
+go1
 T
 1
 T
@@ -380,6 +370,23 @@ false
 "" ""
 PENS
 "default" 1.0 0 -16777216 true "" "plot count turtles with [heading = 4]"
+
+BUTTON
+126
+70
+189
+103
+go2
+go2
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
 
 @#$#@#$#@
 ## WHAT IS IT?
