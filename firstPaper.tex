@@ -13,22 +13,29 @@
 \title{Comparison of Computer Simulation Methods for Predicting Chemical Reactions}
 \author{Graham Gibson}
 \affiliation{
-Department of Physics and Astronomy,
-University of Pittsburgh,
-Pittsburgh, PA 15260,
+IBM,
+Austin TX,
+78723,
 USA.}
 
 \date{\today}
 
 \begin{abstract}
-In this paper we compare two primary methods of predicting basic organic chemistry reaction predictions. We analyze two types of models, NLP based Neural Network methods and agent based modeling. We compare and contrast the complexity, accuracy, and generalizability of both models.  
+
+In this paper we compare two primary methods of predicting basic organic chemistry reaction predictions. We analyze two types of models, an NLP based Neural Network and an agent based model. We compare and contrast the complexity, accuracy, and generalizability of both models as applied to predicting organic chemistry reactions. Two basic reaction mechanisms are explored, Elimination and Addition reactions.  These two mechanisms are simple but fundamental to the set of organic reactions, as many more complicated reactions use this mechanisms as intermediates.  We first verify the model on an alkene halogen addition reaction and then investigate the models generalizability to the elimination reaction. 
+
+
 \end{abstract}
 \pacs{PACS numbers go here. These are classification codes for your  research. See {\tt http://publish.aps.org/PACS/} for more info.}
 \maketitle
 
 \section{Introduction}
 
-Using latex is pretty easy if you have a sample document you can follow.
+The problem of reliably predicting organic chemical reactions is vital in computation chemistry and biology. A model that is able to describe 3-dimension conformations of reactions would go a long way towards solving the more complicated protein folding problem. Finding such a solution would have extremely beneficial consequences in the area of targeted drug development and computational medicine. Such a solution would also drastically reduce drug development time and help eliminate clinical trail risk.
+
+Traditional computational chemistry approaches have involved analyzing the potential energy surface of the atoms in the n-molecule system. The energy surface contains an array of parameters from 3-d cartesian coordinates, to electronegativity, to electron-electron repulsion. Finding the most likely product is equivalent to finding minima in the energy surface using tradition techniques like gradient descent. This method is often termed molecular dynamics . 
+A second approach that is frequently taken is to go deeper into the reaction and look at the driving quantum mechanical principles that are at play. These methods use a combination of approximation techniques to guess the Hamiltonian of an atom and analytically solve for the orbital energy. This allows one to identify reactive orbitals very precisely. The two primary methods are called Hartree-Fock and Density Functional Theory. 
+Although these approaches are invaluable in their description of the energy of chemical reactions, they are both quite complicated and computationally involved. The quantum mechanical approaches are extremely resource intensive as the involve the approximation of complicated integrals and matrix multiplications. It also appears that both methods are essentially overkill when trying predict the result of organic reactions. The reasoning behind this is that chemistry students begin studying reaction mechanisms and gain the ability to predict basic reactions long before they learn about solving Hamiltonian equations. Organic chemistry textbooks focus on what we call the "grammar" of organic chemistry. This involves  studying common reaction mechanisms and patterns of behavior of common functional groups such as OH, COOH, alkenes etc. Organic chemistry students learn chemistry as a combination of a language and a 
 
 \section{Results}
 Including figures, tables, and equations is easy. Latex also permits easy reference to document elements (figures, tables, sections) with the \begin{verbatim}\ref\end{verbatim} command\ref{fig1}. Citations are made with the \begin{verbatim}\cite\end{verbatim} command\cite{lamport}. 
