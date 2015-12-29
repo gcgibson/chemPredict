@@ -18,55 +18,55 @@ to setup
   set-default-shape bromines "molecule1"
   
 ;*********** ELIMINATION REACTION SETUP *************  
-;  create-carbons 2
-;  ask turtle 0 [create-sb-with turtle 1]
-;  create-hydrogens 5
-;  ask turtle 2 [create-sb-with turtle 0]
-;  ask turtle 3 [create-sb-with turtle 0]
-;  ask turtle 6 [create-sb-with turtle 0]
-;  ask turtle 5 [create-sb-with turtle 1]
-;  ask turtle 4 [create-sb-with turtle 1]
-;  create-bromines 1
-;  ask turtle 7 [create-sb-with turtle 1]
-;  create-oxygens  1
-;  create-carbons 1
-;  ask turtle 8 [create-sb-with turtle 9]
-;  create-hydrogens 3
-;  ask turtle 9 [create-sb-with turtle 10]
-;  ask turtle 9 [create-sb-with turtle 11]
-;  ask turtle  9 [create-sb-with turtle 12]
-;  
-;
-;  ask turtles [
-;    ifelse (who > 7)
-;     [ set heading 2
-;       setxy 5 5
-;     ]
-;     [
-;       set heading 1
-;       setxy -5 -5
-;     ]
-;  ] 
-
-;*********** ADDITION REACTION SETUP *************
-
   create-carbons 2
   ask turtle 0 [create-sb-with turtle 1]
-  ask turtle 0 [create-db-with turtle 1]
   create-hydrogens 5
   ask turtle 2 [create-sb-with turtle 0]
   ask turtle 3 [create-sb-with turtle 0]
-  ask turtle 4 [create-sb-with turtle 1]
+  ask turtle 6 [create-sb-with turtle 0]
   ask turtle 5 [create-sb-with turtle 1]
-  create-bromines  1
+  ask turtle 4 [create-sb-with turtle 1]
+  create-bromines 1
+  ask turtle 7 [create-sb-with turtle 1]
+  create-oxygens  1
+  create-carbons 1
+  ask turtle 8 [create-sb-with turtle 9]
+  create-hydrogens 3
+  ask turtle 9 [create-sb-with turtle 10]
+  ask turtle 9 [create-sb-with turtle 11]
+  ask turtle  9 [create-sb-with turtle 12]
+  
+
   ask turtles [
-    ifelse (who = 6 or who = 7)
+    ifelse (who > 7)
      [ set heading 2
+       setxy 5 5
      ]
      [
        set heading 1
+       setxy -5 -5
      ]
   ] 
+
+;*********** ADDITION REACTION SETUP *************
+
+;  create-carbons 2
+;  ask turtle 0 [create-sb-with turtle 1]
+;  ask turtle 0 [create-db-with turtle 1]
+;  create-hydrogens 5
+;  ask turtle 2 [create-sb-with turtle 0]
+;  ask turtle 3 [create-sb-with turtle 0]
+;  ask turtle 4 [create-sb-with turtle 1]
+;  ask turtle 5 [create-sb-with turtle 1]
+;  create-bromines  1
+;  ask turtles [
+;    ifelse (who = 6 or who = 7)
+;     [ set heading 2
+;     ]
+;     [
+;       set heading 1
+;     ]
+;  ] 
 
 ; create-carbons 2
 ;  ask turtle 9 [create--with turtle 8]
@@ -97,7 +97,18 @@ to setup
 end
 
 to go1
-  ask turtles [setxy 1 1]
+  let rand1x random-float 10 - random-float 10
+  let rand1y random-float 10 - random-float 10
+  let rand2x random-float 10 - random-float 10
+  let rand2y random-float 10 - random-float 10
+   let rand3x random-float 10 - random-float 10
+  let rand3y random-float 10 - random-float 10
+  ; move randomly
+  ask turtles [
+    if(heading = 1)[ setxy rand1x rand1y]
+    if(heading = 2)[ setxy rand2x rand2y]
+    if(heading = 3)[ setxy rand3x rand3y]
+    ]
   ask turtles [
      if(breed = oxygens)[react-Foward-oxygens]
     ]
@@ -108,7 +119,7 @@ to go1
    ask turtles [
      if(breed = bromines)[react-Foward-bromines]
     ]
-    ;ask turtles [intramol]
+    ask turtles [intramol]
     set reactionOccured 0
 
   tick
@@ -334,7 +345,7 @@ Ku
 Ku
 0
 100
-69
+100
 1
 1
 NIL
@@ -364,7 +375,7 @@ BUTTON
 55
 go1
 go1\n
-NIL
+T
 1
 T
 OBSERVER
