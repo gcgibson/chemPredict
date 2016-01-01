@@ -1,58 +1,41 @@
-breed [sOrbital s]
-breed [sOrbitalStar s*]
-breed [pOrbital p]
-breed [cation c]
-breed [anion a]
-breed [pOrbitalStar p*]
+breed [electrons elec]
+breed [protons pro]
+breed [neutrons nu]
+breed [nucleous nuc]
+
 to setup
-  ;;set up alkene reduction as 
   clear-all
-  ;; alekene
-  create-sOrbital 6
-  ask turtle 0 [create-link-with  turtle 1]
-  ask turtle 0 [create-link-with  turtle 2]
-  ask turtle 0 [create-link-with  turtle 3]
-  ask turtle 3 [create-link-with  turtle 4]
-  ask turtle 3 [create-link-with  turtle 5]
-  create-pOrbital 2
-  ask turtle 6 [create-link-with turtle 7]
-   ask turtle 6 [create-link-with turtle 0]
-    ask turtle 7 [create-link-with turtle 3]
+  ;create Na 
+  create-electrons 2
+  create-electrons 8
+  create-electrons 1  
+  create-nucleous 1
+  layout-circle turtle 0 turtle 1 20
+;  ask electrons [setxyz 5 5 5]
+;  ask nucleous [setxyz 5 5 5]
   ask turtles [set heading 1]
+  ;create   CL
+  create-electrons 17
+  create-protons 17
+  create-neutrons 18
   
-  create-sOrbital 2
-  ask turtle 8 [create-link-with turtle 9]
-  set-default-shape turtles "dot"
   
   
-  create-cation 1
   
   
   
 end
 
-to go
-  ask turtles [
-    let curWho who
-   ask turtles [
-     if(breed = sOrbital and [breed] of turtle curWho = pOrbital)
-     [
-        ; s* and p orbital can interact by breaking link with s star nbor
-        let pWho who
-        ask [link-neighbors] of turtle who [ ask link who pWho [die]]
-        ; creating link between s orbital and p orbitals s-nbor
-        let newLinkNbor 0
-        ask [link-neighbors] of turtle curWho [if(breed = sOrbital)[set newLinkNbor who]]
-        ask turtle who [create-link-with newLinkNbor]
-        ; need to create the cation
-        ask turtle 10 [create-link-with 
-        
-     ]
-     
-   ] 
-  ]
-end
 
+
+
+
+to go 
+  
+  
+  
+  
+end
 @#$#@#$#@
 GRAPHICS-WINDOW
 0
@@ -84,11 +67,11 @@ ticks
 30.0
 
 BUTTON
-136
-89
-199
-122
-NIL
+103
+73
+166
+106
+go
 go
 T
 1
@@ -101,11 +84,11 @@ NIL
 1
 
 BUTTON
-298
-99
-364
-132
-setup
+112
+163
+178
+196
+NIL
 setup
 NIL
 1
@@ -116,39 +99,6 @@ NIL
 NIL
 NIL
 1
-
-MONITOR
-213
-255
-306
-300
-NIL
-count turtles
-17
-1
-11
-
-MONITOR
-365
-313
-583
-358
-NIL
-count turtles with [breed = sp2o]
-17
-1
-11
-
-MONITOR
-118
-387
-339
-432
-NIL
-count turtles with [breed = sp3o]
-17
-1
-11
 
 @#$#@#$#@
 ## WHAT IS IT?
