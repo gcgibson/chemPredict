@@ -6,6 +6,10 @@
 \usepackage{bm}% bold math
 \usepackage{rotating}
  \usepackage{algpseudocode}
+ \usepackage{placeins}
+ \usepackage{subfig}
+
+ \usepackage{chemfig}
 \voffset 1.0cm
 
 \begin{document}
@@ -27,8 +31,7 @@ In this paper we compare two primary methods of predicting basic organic chemist
 
 
 \end{abstract}
-\pacs{PACS numbers go here. These are classification codes for your  research. See {\tt http://publish.aps.org/PACS/} for more info.}
-\maketitle
+	\maketitle
 
 \section{Introduction}
 
@@ -50,13 +53,19 @@ This figure shows the input sequence being fed into the LSTM network one charact
 
 $$ I = (i_1,i_2,...,i_n)$$   $$ O = (o_1,o_2,...,o_n)$$. 
 
-The LSTM is able to learn a function $f: I \rightarrow O$  using standard stochastic gradient descent by first mapping the input and output character sets to one-hot encodings. If we examine a function $f$ produced by the neural network after an error threshold $e$ is reached we can investigate the semantic meaning of the mapping. The map $f$ takes input sequences of SMILES encoded reactants and outputs SMILES encoded products. For example 
+The LSTM is able to learn a function $f: I \rightarrow O$  using standard stochastic gradient descent by first mapping the input and output character sets to one-hot encodings. If we examine a function $f$ produced by the neural network after an error threshold $e$ is reached we can investigate the semantic meaning of the mapping. The map $f$ takes input sequences of SMILES encoded reactants and outputs SMILES encoded products. For example \\
 
-$$ CCC=C \  \ HBr  \rightarrow CCCCBr$$
+\begin{center}
+\schemestart \chemfig{-[:30]=[:-30]}  \ \  \  \ +  \  \  \ \chemfig{HBr} \arrow{->}  \chemfig{-[:30]-[:-30]-[:30]Br} \schemestop\par
+\end{center}
+
 
 If we apply this function to variable length number of carbon off of the double bond we learn something about the function mapping. 
+\begin{center}
 
-$$ f(CC_nC=C , \ HBr )\rightarrow CC_nCCBr$$
+\schemestart \chemfig{-[:-30] \ n \ -[:30]=[:-30]}  \ \  \  \ +  \  \  \ \chemfig{HBr} \arrow{->}  \chemfig{-[:-30] \ n \ -[:30]-[:-30]-[:30]Br} \schemestop\par
+\end{center}
+
 We see that the function $f$ has in a sense learned properties of the reaction. First, it knows that reactive site in the addition reaction is the alkene $C=C$ bond and is also able to understand that the number of $C$s is invariant under the mapping. \\
 
 
@@ -121,61 +130,64 @@ By defining an agent this way we can use two simple heuristics to update agent $
 \end{algorithmic}
 
 
+Below is the result of running the algorithm on a chiral center of bond order $4$ for $1000$ time steps.
+\begin{figure}[ht]
+\includegraphics[width=20cm,angle=0]{/Users/grahamgibson/Documents/sscat.png}
+\caption{Result of Stochastic Arrangement Algorithm of Carbon}
+\label{Elimination}
+\end{figure}
+
+\FloatBarrier
 \textbf{Results}
 
 
-As can see from the figures below the ABM based on these two simple heuristics we are able to understand elimination reactions of the form 
+As can be seen from the figures below the ABM based on these two simple heuristics us able to predict elimination reactions that employ the E1 Mechanism. The following result is from the ABM run on the reactants below. 
+\\ \\
+\begin{center}
+\schemestart \chemfig{-[:30]-[:-30]Cl}  \ \  \  \ +  \  \  \ \chemfig{O^{-}} \arrow{->}  \chemfig{=} \ \  \  + \ \  \   \chemfig{Cl^{-}}   \schemestop\par
 
-$$CCCl \  \ \ O^- \rightarrow C=C \ \ \  Cl^- $$
-\begin{figure}[ht]
-\includegraphics[width=7cm,angle=0]{/Users/grahamgibson/Documents/mol1.png}
-\caption{Number of atoms tagged in molecule 1}
-\label{Elimination}
+
+\end{center}
+
+
+
+\begin{figure}[!tbp]
+  \centering
+  \subfloat[Molecule 1]{\includegraphics[width=0.5\textwidth]{/Users/grahamgibson/Documents/emol1.png}\label{Molecule 1}}
+  \hfill
+  \subfloat[Molecule 2]{\includegraphics[width=0.5\textwidth]{/Users/grahamgibson/Documents/emol2.png}\label{Molecule 2}}
+  \hfill
+   \subfloat[Molecule 3]{\includegraphics[width=0.5\textwidth]{/Users/grahamgibson/Documents/emol3.png}\label{Molecule 3}}
+
 \end{figure}
 
 
-\begin{figure}[ht]
-\includegraphics[width=7cm,angle=0]{/Users/grahamgibson/Documents/mol2.png}
-\caption{Number of atoms tagged in molecule 2}
-\label{Elimination}
+
+\FloatBarrier
+
+The ABM was also correctly able to predict addition reactions when given the following reactants.
+
+\begin{center}
+\schemestart   \chemfig{-[:30]=[:-30]}  \ \  \  \ +  \  \  \ \chemfig{HBr} \arrow{->} \chemfig{-[:30]-[:-30]Br}   \schemestop\par
+
+\end{center}
+\FloatBarrier
+\begin{figure}[h]
+  \centering
+  \subfloat[Molecule 1]{\includegraphics[width=0.5\textwidth]{/Users/grahamgibson/Documents/amol1.png}\label{Molecule 1}}
+  \hfill
+  \subfloat[Molecule 2]{\includegraphics[width=0.5\textwidth]{/Users/grahamgibson/Documents/amol2.png}\label{Molecule 2}}
+  \hfill
+
 \end{figure}
-
-
-\begin{figure}[ht]
-\includegraphics[width=7cm,angle=0]{/Users/grahamgibson/Documents/mol3.png}
-\caption{Number of atoms tagged in molecule 3}
-\label{Elimination}
-\end{figure}
-
-
-
-And addition reactions of the form 
-
-$$C=C \  \ \ HBr \rightarrow CCBr\ \ \  $$
-
-
-\begin{figure}[ht]
-\includegraphics[width=7cm,angle=0]{/Users/grahamgibson/Documents/mol1_2.png}
-\caption{Number of atoms tagged in molecule 1}
-\label{Addition}
-\end{figure}
-
-
-\begin{figure}[ht]
-\includegraphics[width=7cm,angle=0]{/Users/grahamgibson/Documents/mol2_2.png}
-\caption{Number of atoms tagged in molecule 2}
-\label{Addition}
-\end{figure}
-
 
 
 
 \section{Conclusions}
+Two models were presented in an attempt to correctly predict addition and elimination reaction mechanisms in organic chemistry. The NLP based LSTM network was correctly able to correctly learn that the double bond of alkenes is the most reactive site and will react with halogens to add across the double bond. However, two main limitations exist to this model. First, the search space is too large to abstract to other mechanisms, such as elimination, without an extremely large amount of time spent training. Second, using the language model causes the network to loose chemical information by only creating syntactic relationships between atoms. Improving the training of such a network would be very profitable because the main advantage of the model is the simplicity of training data required. One would be able to predict chemical reactions without any heuristic assumptions by simply feeding the network known reactions. 
+The ABM was able to learn more mechanisms, both addition and elimination, and converge in a smaller number of time steps due to the smaller search space. However, unlike the LSTM, certain chemical heuristics must be assumed to be universally successful in predicting reactions. As the model is tested on more and more reactions, new heuristics may have to be added to account for boundary conditions which may lead to an inelegant solution of a long chain of logical if then statements. Further research on both models is required to see how well they are able to abstract to the entire language of organic chemistry.
 
-Man, latex is great!
 
-\acknowledgments
-The author is grateful to Donald Knuth for inventing tex, and making publication quality typesetting a reality for scientists around the world.
 
 
 \begin{thebibliography}{99}
