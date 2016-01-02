@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  1 JAN 2016 21:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  1 JAN 2016 21:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -155,7 +155,23 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip51
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (./firstPaper.aux)
+) (./firstPaper.aux
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+)
 \openout1 = `firstPaper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -173,8 +189,7 @@ LaTeX Font Info:    ... okay on input line 11.
 Class revtex4 Info: Patching array package. on input line 11.
 Class revtex4 Info: cite was not loaded (OK!) on input line 11.
 Class revtex4 Info: multicol was not loaded (OK!) on input line 11.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count102
 \scratchdimen=\dimen106
@@ -272,39 +287,85 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
+</Users/grahamgibson/Documents/mol1.png, id=28, 200.75pt x 150.5625pt>
+File: /Users/grahamgibson/Documents/mol1.png Graphic file (type png)
+
+<use /Users/grahamgibson/Documents/mol1.png>
+Package pdftex.def Info: /Users/grahamgibson/Documents/mol1.png used on input l
+ine 131.
+(pdftex.def)             Requested size: 199.16928pt x 149.38814pt.
+
+</Users/grahamgibson/Documents/mol2.png, id=29, 200.75pt x 150.5625pt>
+File: /Users/grahamgibson/Documents/mol2.png Graphic file (type png)
+
+<use /Users/grahamgibson/Documents/mol2.png>
+Package pdftex.def Info: /Users/grahamgibson/Documents/mol2.png used on input l
+ine 138.
+(pdftex.def)             Requested size: 199.16928pt x 149.38814pt.
+
+</Users/grahamgibson/Documents/mol3.png, id=30, 200.75pt x 150.5625pt>
+File: /Users/grahamgibson/Documents/mol3.png Graphic file (type png)
+
+<use /Users/grahamgibson/Documents/mol3.png>
+Package pdftex.def Info: /Users/grahamgibson/Documents/mol3.png used on input l
+ine 145.
+(pdftex.def)             Requested size: 199.16928pt x 149.38814pt.
+
+</Users/grahamgibson/Documents/mol1_2.png, id=31, 200.75pt x 150.5625pt>
+File: /Users/grahamgibson/Documents/mol1_2.png Graphic file (type png)
+
+<use /Users/grahamgibson/Documents/mol1_2.png>
+Package pdftex.def Info: /Users/grahamgibson/Documents/mol1_2.png used on input
+ line 158.
+(pdftex.def)             Requested size: 199.16928pt x 149.38814pt.
+
+</Users/grahamgibson/Documents/mol2_2.png, id=32, 200.75pt x 150.5625pt>
+File: /Users/grahamgibson/Documents/mol2_2.png Graphic file (type png)
+
+<use /Users/grahamgibson/Documents/mol2_2.png>
+Package pdftex.def Info: /Users/grahamgibson/Documents/mol2_2.png used on input
+ line 165.
+(pdftex.def)             Requested size: 199.16928pt x 149.38814pt.
+ [3]
 
 Package natbib Warning: There were undefined citations.
 
-[3] (./firstPaper.aux) ) 
+[4 </Users/grahamgibson/Documents/mol1.png> </Users/grahamgibson/Documents/mol2
+.png>] [5 </Users/grahamgibson/Documents/mol3.png> </Users/grahamgibson/Documen
+ts/mol1_2.png> </Users/grahamgibson/Documents/mol2_2.png>] (./firstPaper.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3789 strings out of 493089
- 51154 string characters out of 6134842
- 129984 words of memory out of 5000000
- 7229 multiletter control sequences out of 15000+600000
+ 3816 strings out of 493089
+ 52112 string characters out of 6134842
+ 131023 words of memory out of 5000000
+ 7250 multiletter control sequences out of 15000+600000
  11835 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,9n,23p,1150b,273s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on firstPaper.pdf (3 pages, 210485 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on firstPaper.pdf (5 pages, 222653 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 101 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
