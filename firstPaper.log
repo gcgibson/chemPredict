@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 JAN 2016 13:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 JAN 2016 20:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -203,13 +203,26 @@ Package caption Info: rotating package is loaded.
 \c@lotdepth=\count109
 \sf@top=\skip55
 \sf@bottom=\skip56
-) (/usr/local/texlive/2015/texmf-dist/tex/generic/chemfig/chemfig.sty
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks19
+\symAMSa=\mathgroup7
+\symAMSb=\mathgroup8
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+LaTeX Info: Redefining \frak on input line 111.
+LaTeX Info: Redefining \Bbb on input line 113.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/chemfig/chemfig.sty
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
-\pgfutil@everybye=\toks19
+\pgfutil@everybye=\toks20
 \pgfutil@tempdima=\dimen114
 \pgfutil@tempdimb=\dimen115
 
@@ -229,12 +242,12 @@ Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks20
-\pgfkeys@temptoks=\toks21
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
 ode.tex
-\pgfkeys@tmptoks=\toks22
+\pgfkeys@tmptoks=\toks23
 ))
 \pgf@x=\dimen116
 \pgf@y=\dimen117
@@ -250,9 +263,9 @@ ode.tex
 \c@pgf@countb=\count111
 \c@pgf@countc=\count112
 \c@pgf@countd=\count113
-\t@pgf@toka=\toks23
-\t@pgf@tokb=\toks24
-\t@pgf@tokc=\toks25
+\t@pgf@toka=\toks24
+\t@pgf@tokb=\toks25
+\t@pgf@tokc=\toks26
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -302,9 +315,9 @@ Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 \pgfmath@dimen=\dimen124
 \pgfmath@count=\count116
 \pgfmath@box=\box36
-\pgfmath@toks=\toks26
-\pgfmath@stack@operand=\toks27
-\pgfmath@stack@operation=\toks28
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
 tex
@@ -451,8 +464,8 @@ Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen151
 \pgffor@skip=\dimen152
-\pgffor@stack=\toks29
-\pgffor@toks=\toks30
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -508,50 +521,38 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 )
 Package: chemfig 2015/02/23 v1.1a Draw molecule with an easy syntax
 )
-(./firstPaper.aux
-
-LaTeX Warning: Label `Molecule 1' multiply defined.
-
-
-LaTeX Warning: Label `sub@Molecule 1' multiply defined.
-
-
-LaTeX Warning: Label `Molecule 2' multiply defined.
-
-
-LaTeX Warning: Label `sub@Molecule 2' multiply defined.
-
-)
+(./firstPaper.aux)
 \openout1 = `firstPaper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-Class revtex4 Info: Patching array package. on input line 15.
-Class revtex4 Info: cite was not loaded (OK!) on input line 15.
-Class revtex4 Info: multicol was not loaded (OK!) on input line 15.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+Class revtex4 Info: Patching array package. on input line 16.
+Class revtex4 Info: cite was not loaded (OK!) on input line 16.
+Class revtex4 Info: multicol was not loaded (OK!) on input line 16.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count134
 \scratchdimen=\dimen162
 \scratchbox=\box50
 \nofMPsegments=\count135
 \nofMParguments=\count136
-\everyMPshowfont=\toks31
+\everyMPshowfont=\toks32
 \MPscratchCnt=\count137
 \MPscratchDim=\dimen163
 \MPnumerator=\count138
 \makeMPintoPDFobject=\count139
-\everyMPtoPDFconversion=\toks32
+\everyMPtoPDFconversion=\toks33
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -616,45 +617,101 @@ See the caption package documentation for explanation.
 
 Package caption Info: End \AtBeginDocument code.
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 45.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 45.
+
+Package natbib Warning: Citation `AbProtein' on page 1 undefined on input line 
+39.
 
 
-Package natbib Warning: Citation `(' on page 1 undefined on input line 45.
+Package natbib Warning: Citation `dugDiscover' on page 1 undefined on input lin
+e 39.
+
+
+Package natbib Warning: Citation `pes' on page 1 undefined on input line 41.
+
+
+Package natbib Warning: Citation `HartreeFock' on page 1 undefined on input lin
+e 42.
+
+
+Package natbib Warning: Citation `dft' on page 1 undefined on input line 42.
+
+
+Package natbib Warning: Citation `compComplex' on page 1 undefined on input lin
+e 43.
+
+
+Package natbib Warning: Citation `s2s' on page 1 undefined on input line 46.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 46.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 46.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+Package natbib Warning: Citation `unreasonable' on page 1 undefined on input li
+ne 46.
+
+
+Package natbib Warning: Citation `lamport' on page 1 undefined on input line 46
+.
 
 <fig1.png, id=4, 385.44pt x 92.0238pt>
 File: fig1.png Graphic file (type png)
  <use fig1.png>
-Package pdftex.def Info: fig1.png used on input line 47.
+Package pdftex.def Info: fig1.png used on input line 48.
 (pdftex.def)             Requested size: 199.16928pt x 47.55075pt.
- [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+
+Package natbib Warning: Citation `SMILES' on page 1 undefined on input line 53.
+
+
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 79.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 79.
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--101
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--101
+Underfull \hbox (badness 10000) in paragraph at lines 95--102
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--102
+
+ []
+
+
+Package natbib Warning: Citation `abm' on page 2 undefined on input line 104.
 
 [2 <./fig1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+Underfull \hbox (badness 10000) in paragraph at lines 111--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--115
+
+ []
+
+
+Package natbib Warning: Citation `eneg' on page 3 undefined on input line 125.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--129
 
  []
 
@@ -663,81 +720,96 @@ File: /Users/grahamgibson/Documents/sscat.png Graphic file (type png)
 
 <use /Users/grahamgibson/Documents/sscat.png>
 Package pdftex.def Info: /Users/grahamgibson/Documents/sscat.png used on input 
-line 135.
+line 144.
 (pdftex.def)             Requested size: 569.05511pt x 345.97339pt.
 
-Overfull \hbox (59.05511pt too wide) in paragraph at lines 135--136
+Overfull \hbox (59.05511pt too wide) in paragraph at lines 144--145
  [][] 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 144--146
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--146
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
-</Users/grahamgibson/Documents/emol1.png, id=34, 934.49126pt x 568.1225pt>
+</Users/grahamgibson/Documents/emol1.png, id=35, 934.49126pt x 568.1225pt>
 File: /Users/grahamgibson/Documents/emol1.png Graphic file (type png)
 
 <use /Users/grahamgibson/Documents/emol1.png>
 Package pdftex.def Info: /Users/grahamgibson/Documents/emol1.png used on input 
-line 156.
+line 165.
 (pdftex.def)             Requested size: 255.0pt x 155.02486pt.
 
-</Users/grahamgibson/Documents/emol2.png, id=35, 934.49126pt x 568.1225pt>
+</Users/grahamgibson/Documents/emol2.png, id=36, 934.49126pt x 568.1225pt>
 File: /Users/grahamgibson/Documents/emol2.png Graphic file (type png)
 
 <use /Users/grahamgibson/Documents/emol2.png>
 Package pdftex.def Info: /Users/grahamgibson/Documents/emol2.png used on input 
-line 158.
+line 167.
 (pdftex.def)             Requested size: 255.0pt x 155.02486pt.
 
-</Users/grahamgibson/Documents/emol3.png, id=36, 934.49126pt x 568.1225pt>
+</Users/grahamgibson/Documents/emol3.png, id=37, 934.49126pt x 568.1225pt>
 File: /Users/grahamgibson/Documents/emol3.png Graphic file (type png)
 
 <use /Users/grahamgibson/Documents/emol3.png>
 Package pdftex.def Info: /Users/grahamgibson/Documents/emol3.png used on input 
-line 160.
+line 169.
 (pdftex.def)             Requested size: 255.0pt x 155.02486pt.
  [4 </Users/grahamgibson/Documents/sscat.png>]
-</Users/grahamgibson/Documents/amol1.png, id=41, 934.49126pt x 568.1225pt>
+</Users/grahamgibson/Documents/amol1.png, id=42, 934.49126pt x 568.1225pt>
 File: /Users/grahamgibson/Documents/amol1.png Graphic file (type png)
 
 <use /Users/grahamgibson/Documents/amol1.png>
 Package pdftex.def Info: /Users/grahamgibson/Documents/amol1.png used on input 
-line 177.
+line 186.
 (pdftex.def)             Requested size: 255.0pt x 155.02486pt.
 
-</Users/grahamgibson/Documents/amol2.png, id=42, 934.49126pt x 568.1225pt>
+</Users/grahamgibson/Documents/amol2.png, id=43, 934.49126pt x 568.1225pt>
 File: /Users/grahamgibson/Documents/amol2.png Graphic file (type png)
 
 <use /Users/grahamgibson/Documents/amol2.png>
 Package pdftex.def Info: /Users/grahamgibson/Documents/amol2.png used on input 
-line 179.
+line 188.
 (pdftex.def)             Requested size: 255.0pt x 155.02486pt.
  [5 </Users/grahamgibson/Documents/emol1.png> </Users/grahamgibson/Documents/em
 ol2.png> </Users/grahamgibson/Documents/emol3.png> </Users/grahamgibson/Documen
-ts/amol1.png> </Users/grahamgibson/Documents/amol2.png>]
+ts/amol1.png> </Users/grahamgibson/Documents/amol2.png>] [6]
+
+LaTeX Warning: Reference `LastBibItem' on page 7 undefined on input line 203.
+
+
+Class revtex4 Warning: Endnote numbers changed: rerun LaTeX.
+
 
 Package natbib Warning: There were undefined citations.
 
-[6] (./firstPaper.aux)
+[7] (./firstPaper.aux
 
-LaTeX Warning: There were multiply-defined labels.
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
 
  ) 
 Here is how much of TeX's memory you used:
- 15597 strings out of 493089
- 296928 string characters out of 6134842
- 376087 words of memory out of 5000000
- 18803 multiletter control sequences out of 15000+600000
- 11667 words of font info for 40 fonts, out of 8000000 for 9000
+ 15908 strings out of 493089
+ 300568 string characters out of 6134842
+ 375800 words of memory out of 5000000
+ 19094 multiletter control sequences out of 15000+600000
+ 14293 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,92p,1150b,1184s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,92p,1050b,1184s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -750,14 +822,14 @@ l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on firstPaper.pdf (6 pages, 332994 bytes).
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on firstPaper.pdf (7 pages, 328751 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
